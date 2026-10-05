@@ -1,15 +1,13 @@
-extends Node2D
-
 func get_local_ip() -> String:
 	var interfaces = IP.get_local_interfaces()
 	var candidates = []
-
+	
 	for iface in interfaces:
-		var name = iface.name.to_lower()
+		var _name = iface.name.to_lower()
 		# 1. 排除虚拟网卡和回环
-		if name.contains('virtual') or name.contains('vmware') or name.contains('vbox'):
+		if _name.contains('virtual') or _name.contains('vmware') or _name.contains('vbox'):
 			continue
-		if name.contains('loopback') or name.contains('docker'):
+		if _name.contains('loopback') or _name.contains('docker'):
 			continue
 		
 		for ip in iface.addresses:
@@ -22,13 +20,13 @@ func get_local_ip() -> String:
 				
 				if is_private:
 					var priority = 0
-					if name.contains('wlan') or name.contains('wi-fi') or name.contains('无线'):
+					if _name.contains('wlan') or _name.contains('wi-fi') or _name.contains('无线'):
 						priority = 10
-					elif name.contains('eth') or name.contains('enp') or name.contains('以太网'):
+					elif _name.contains('eth') or _name.contains('enp') or _name.contains('以太网'):
 						priority = 5
 					candidates.append({'ip': ip, 'priority': priority})
-
+	
 	if candidates.is_empty():
-		return '未找到有效IP'
+		return '127.0.0.1'
 	candidates.sort_custom(func(a, b): return a.priority > b.priority)
 	return candidates[0].ip
