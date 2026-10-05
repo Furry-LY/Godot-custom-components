@@ -1,0 +1,6 @@
+<svg width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+  <g id="base-layer">
+    <circle cx="300" cy="300" r="130" fill="#e8e8e8" opacity="0.5" stroke="#d0d0d0" stroke-width="4"/>
+    <circle cx="300" cy="300" r="105" fill="#f5f5f5" opacity="0.5"/>
+  </g>
+</svg>

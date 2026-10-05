@@ -1,0 +1,6 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <!-- 灰色底盘 -->
+  <circle cx="12" cy="12" r="10" fill="#3a3a3a" stroke="#4ade80" stroke-width="1.5"/>
+  <!-- 灰色摇杆头 -->
+  <circle cx="12" cy="12" r="4" fill="#5a5a5a" stroke="#7a7a7a" stroke-width="1.5"/>
+</svg>
